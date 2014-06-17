@@ -9,7 +9,7 @@ class chrony::params {
   $config_keys_template = 'chrony/chrony.keys.erb'
 
   case $::osfamily {
-    'Archlinux' : {
+    'Archlinux': {
       $config = '/etc/chrony.conf'
       $config_template = 'chrony/chrony.conf.archlinux.erb'
       $config_keys = '/etc/chrony.keys'
@@ -17,7 +17,7 @@ class chrony::params {
       $service_name = 'chrony'
       $servers = ['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org',]
     }
-    'RedHat' : {
+    'RedHat': {
       $config = '/etc/chrony.conf'
       $config_template = 'chrony/chrony.conf.redhat.erb'
       $config_keys = '/etc/chrony.keys'
@@ -33,9 +33,8 @@ class chrony::params {
       $service_name = 'chrony'
       $servers = ['0.debian.pool.ntp.org', '1.debian.pool.ntp.org', '2.debian.pool.ntp.org', '3.debian.pool.ntp.org']
     }
-    default     : {
-      fail("The ${module_name} module is not supported
-      on an ${::osfamily} based system.")
+    default: {
+      fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
     }
   }
 }
