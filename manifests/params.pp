@@ -6,7 +6,6 @@ class chrony::params {
   $chrony_password = 'xyzzy'
   $queryhosts = undef
 
-  $servers = ['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org',]
   $config_keys_template = 'chrony/chrony.keys.erb'
 
   case $::osfamily {
@@ -16,6 +15,7 @@ class chrony::params {
       $config_keys = '/etc/chrony.keys'
       $package_name = ['chrony']
       $service_name = 'chrony'
+      $servers = ['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org',]
     }
     'RedHat' : {
       $config = '/etc/chrony.conf'
