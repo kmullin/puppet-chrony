@@ -30,7 +30,7 @@ bindcmdaddress ::1
 # Serve time even if not synchronized to any NTP server.
 local stratum 10
 
-keyfile <%= @config_keys %>
+keyfile /etc/chrony.keys
 
 # Specify the key used as password for chronyc.
 commandkey 1
