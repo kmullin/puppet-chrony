@@ -23,6 +23,7 @@ class chrony::params {
       $config_keys = '/etc/chrony.keys'
       $package_name = ['chrony']
       $service_name = 'chronyd'
+      $servers = ['0.fedora.pool.ntp.org', '1.fedora.pool.ntp.org', '2.fedora.pool.ntp.org', '3.fedora.pool.ntp.org']
     }
     'Debian': {
       $config = '/etc/chrony/chrony.conf'
@@ -30,6 +31,7 @@ class chrony::params {
       $config_keys = '/etc/chrony/chrony.keys'
       $package_name = ['chrony']
       $service_name = 'chrony'
+      $servers = ['0.debian.pool.ntp.org', '1.debian.pool.ntp.org', '2.debian.pool.ntp.org', '3.debian.pool.ntp.org']
     }
     default     : {
       fail("The ${module_name} module is not supported
