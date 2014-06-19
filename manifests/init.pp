@@ -14,6 +14,7 @@ class chrony (
   $servers              = $chrony::params::servers,
   $queryhosts           = $chrony::params::queryhosts,
   $whitelist            = $chrony::params::whitelist,
+  $driftfile            = $chrony::params::driftfile,
 ) inherits
 chrony::params {
   include '::chrony::install'

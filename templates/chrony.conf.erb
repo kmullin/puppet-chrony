@@ -8,7 +8,7 @@ server <%= server %> iburst
 stratumweight 0
 
 # Record the rate at which the system clock gains/losses time.
-driftfile /var/lib/chrony/drift
+driftfile <%= @driftfile %>
 
 # Enable kernel RTC synchronization.
 rtcsync
@@ -34,7 +34,7 @@ local stratum 10
 allow <%= cidr %>
 <% end -%>
 
-keyfile /etc/chrony.keys
+keyfile <%= @config_keys %>
 
 # Specify the key used as password for chronyc.
 commandkey 1

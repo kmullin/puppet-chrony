@@ -17,6 +17,7 @@ class chrony::params {
       $service_name = 'chrony'
       $servers = ['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org',]
       $whitelist = []
+      $driftfile = '/etc/chrony.drift'
     }
     'RedHat': {
       $config = '/etc/chrony.conf'
@@ -26,6 +27,7 @@ class chrony::params {
       $service_name = 'chronyd'
       $servers = ['0.fedora.pool.ntp.org', '1.fedora.pool.ntp.org', '2.fedora.pool.ntp.org', '3.fedora.pool.ntp.org']
       $whitelist = []
+      $driftfile = '/var/lib/chrony/drift'
     }
     'Debian': {
       $config = '/etc/chrony/chrony.conf'
@@ -35,6 +37,7 @@ class chrony::params {
       $service_name = 'chrony'
       $servers = ['0.debian.pool.ntp.org', '1.debian.pool.ntp.org', '2.debian.pool.ntp.org', '3.debian.pool.ntp.org']
       $whitelist = ['10/8', '192.168/16', '172.16/12']
+      $driftfile = '/var/lib/chrony/chrony.drift'
     }
     default: {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
