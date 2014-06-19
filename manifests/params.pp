@@ -15,6 +15,7 @@ class chrony::params {
       $config_keys = '/etc/chrony.keys'
       $package_name = ['chrony']
       $service_name = 'chrony'
+      $service_hasstatus = true
       $servers = ['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org',]
       $whitelist = []
       $driftfile = '/etc/chrony.drift'
@@ -24,6 +25,7 @@ class chrony::params {
       $config_keys = '/etc/chrony.keys'
       $package_name = ['chrony']
       $service_name = 'chronyd'
+      $service_hasstatus = true
       $servers = ['0.fedora.pool.ntp.org', '1.fedora.pool.ntp.org', '2.fedora.pool.ntp.org', '3.fedora.pool.ntp.org']
       $whitelist = []
       $driftfile = '/var/lib/chrony/drift'
@@ -33,6 +35,7 @@ class chrony::params {
       $config_keys = '/etc/chrony/chrony.keys'
       $package_name = ['chrony']
       $service_name = 'chrony'
+      $service_hasstatus = false
       $servers = ['0.debian.pool.ntp.org', '1.debian.pool.ntp.org', '2.debian.pool.ntp.org', '3.debian.pool.ntp.org']
       $chrony_options = {
         'whitelist'  => ['10/8', '192.168/16', '172.16/12'],
