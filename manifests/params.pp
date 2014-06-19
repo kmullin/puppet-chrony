@@ -29,6 +29,16 @@ class chrony::params {
       $servers = ['0.fedora.pool.ntp.org', '1.fedora.pool.ntp.org', '2.fedora.pool.ntp.org', '3.fedora.pool.ntp.org']
       $whitelist = []
       $driftfile = '/var/lib/chrony/drift'
+      $chrony_options = {
+        'driftfile'     => '/var/lib/chrony/drift',
+        'commandkey'    => '1',
+        'makestep'      => '100 3',
+        'logchange'     => '0.5',
+        'logdir'        => '/var/log/chrony',
+        'rtcsync'       => '',
+        'noclientlog'   => '',
+        'stratumweight' => '0',
+      }
     }
     'Debian': {
       $config = '/etc/chrony/chrony.conf'
