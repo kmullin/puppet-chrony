@@ -30,6 +30,10 @@ bindcmdaddress ::1
 # Serve time even if not synchronized to any NTP server.
 local stratum 10
 
+<% @whitelist.each do |cidr| -%>
+allow <%= cidr %>
+<% end -%>
+
 keyfile /etc/chrony.keys
 
 # Specify the key used as password for chronyc.

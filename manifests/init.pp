@@ -6,12 +6,15 @@ class chrony (
   $chrony_password      = $chrony::params::chrony_password,
   $package_ensure       = $chrony::params::package_ensure,
   $package_name         = $chrony::params::package_name,
-  $servers              = $chrony::params::servers,
-  $queryhosts           = $chrony::params::queryhosts,
   $service_enable       = $chrony::params::service_enable,
   $service_ensure       = $chrony::params::service_ensure,
   $service_manage       = $chrony::params::service_manage,
-  $service_name         = $chrony::params::service_name,) inherits
+  $service_name         = $chrony::params::service_name,
+  $service_hasstatus    = $chrony::params::service_hasstatus,
+  $servers              = $chrony::params::servers,
+  $queryhosts           = $chrony::params::queryhosts,
+  $whitelist            = $chrony::params::whitelist,
+) inherits
 chrony::params {
   include '::chrony::install'
   include '::chrony::config'
