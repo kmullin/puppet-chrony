@@ -1,9 +1,16 @@
 <% @chrony_options.each_pair do |k,v| -%>
   <%- if v.kind_of?(Array) -%>
     <%- v.each do |opt| -%>
-<%= "%s %s" % [k, opt] -%>
+      <%- if k == 'whitelist' -%>
+<%= "allow %s" % [opt] %>
+      <%- elsif k == 'servers' -%>
+<%= "server %s" % [opt] %>
+      <%- else -%>
+<%= "%s %s" % [k, opt] %>
+      <%- end -%>
     <%- end -%>
   <%- else -%>
-<%= "%s %s" % [k, v] -%>
+<%= "%s %s" % [k, v] %>
   <%- end -%>
 <% end -%>
+keyfile <%= @config_keys %>

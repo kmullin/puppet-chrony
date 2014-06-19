@@ -34,8 +34,13 @@ class chrony::params {
       $package_name = ['chrony']
       $service_name = 'chrony'
       $servers = ['0.debian.pool.ntp.org', '1.debian.pool.ntp.org', '2.debian.pool.ntp.org', '3.debian.pool.ntp.org']
-      $whitelist = ['10/8', '192.168/16', '172.16/12']
-      $driftfile = '/var/lib/chrony/chrony.drift'
+      $chrony_options = {
+        'whitelist'  => ['10/8', '192.168/16', '172.16/12'],
+        'driftfile'  => '/var/lib/chrony/chrony.drift',
+        'commandkey' => '1',
+        'dumpdir'    => '/var/lib/chrony',
+        'dumponexit' => '',
+      }
     }
     default: {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
