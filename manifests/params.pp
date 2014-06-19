@@ -38,11 +38,17 @@ class chrony::params {
       $service_hasstatus = false
       $servers = ['0.debian.pool.ntp.org', '1.debian.pool.ntp.org', '2.debian.pool.ntp.org', '3.debian.pool.ntp.org']
       $chrony_options = {
-        'whitelist'  => ['10/8', '192.168/16', '172.16/12'],
-        'driftfile'  => '/var/lib/chrony/chrony.drift',
-        'commandkey' => '1',
-        'dumpdir'    => '/var/lib/chrony',
-        'dumponexit' => '',
+        'whitelist'     => ['10/8', '192.168/16', '172.16/12'],
+        'driftfile'     => '/var/lib/chrony/chrony.drift',
+        'commandkey'    => '1',
+        'dumpdir'       => '/var/lib/chrony',
+        'dumponexit'    => '',
+        'local stratum' => '10',
+        'logchange'     => '0.5',
+        'logdir'        => '/var/log/chrony',
+        'rtconutc'      => '',
+        'maxupdateskew' => '100.0',
+        'log'           => 'tracking measurements statistics'
       }
     }
     default: {
