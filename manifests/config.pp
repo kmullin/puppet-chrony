@@ -1,10 +1,4 @@
-class chrony::config (
-  $config               = $chrony::config,
-  $config_template      = $chrony::config_template,
-  $config_keys          = $chrony::config_keys,
-  $config_keys_template = $chrony::config_keys_template,
-  $chrony_password      = $chrony::chrony_password,
-  $servers              = $chrony::servers,) inherits chrony {
+class chrony::config inherits chrony {
   file { $config:
     ensure  => file,
     owner   => 0,
